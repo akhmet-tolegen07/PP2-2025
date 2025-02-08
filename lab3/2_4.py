@@ -7,7 +7,12 @@ def prime(n):
     return True
 
 def filter_prime(numbers):
-    return [num for num in numbers if prime(num)]
+    filtered_numbers = []
+    for num in numbers:
+        if prime(num):
+            filtered_numbers.append(num)
+    return filtered_numbers
+
 
 
 numbers = [1, 2, 3, 4, 10, 45, 7, 9, 15, 17, 23]

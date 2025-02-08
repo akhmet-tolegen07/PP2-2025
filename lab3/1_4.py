@@ -18,7 +18,6 @@ class Point:
         print("The distance between 2 points: ", d)
         return d
 
-# Пример использования
 p1 = Point(3, 6)
 p2 = Point(5, 7)
 

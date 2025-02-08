@@ -79,21 +79,34 @@ def func1(movie):
     return movie["imdb"] > 5.5
 
 def func2(movies_list):
-    return [movie for movie in movies_list if movie["imdb"] > 5.5]
+    filtered_movies = []
+    for movie in movies_list:
+        if movie["imdb"] > 5.5:
+            filtered_movies.append(movie)   
+    return filtered_movies
 
 def func3(movies_list, category):
-    return [movie for movie in movies_list if movie["category"] == category]
+    filtered_movies = []
+    for movie in movies_list:
+        if movie["category"] == category:
+            filtered_movies.append(movie)
+    return filtered_movies
 
 def func4(movies_list):
-    total_imdb = sum(movie["imdb"] for movie in movies_list)
+    total_imdb = 0
+    for movie in movies_list:
+        total_imdb += movie["imdb"]
     return total_imdb / len(movies_list)
 
 def func5(movies_list, category):
-    category_movies = [movie for movie in movies_list if movie["category"] == category]
-    if category_movies:
-        total_imdb = sum(movie["imdb"] for movie in category_movies)
-        return total_imdb / len(category_movies)
-    return 0
+    filtered_movies = []
+    for movie in movies_list:
+        if movie["category"] == category:
+            filtered_movies.append(movie)
+    total_imdb = 0
+    for movie in filtered_movies:
+        total_imdb += movie["imdb"]
+    return total_imdb / len(filtered_movies)
 
 print(func1(movies[0]))
 
